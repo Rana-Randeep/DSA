@@ -72,6 +72,15 @@ public class LinkedList2 {
         curr.next=curr.next.next;
         System.out.println("element deleted");
     }
+    
+    public static int printLength(Node1 temp){
+        int counter=0;
+        while(temp!=null){
+            counter++;
+            temp=temp.next;
+        }
+        return counter;
+    }
 
     public static void main(String args[]){
         Scanner we=new Scanner(System.in);
@@ -85,25 +94,26 @@ public class LinkedList2 {
             System.out.println("Press 1 for insertion operation");
             System.out.println("Press 2 for deletion operation");
             System.out.println("Press 3 to display your Linked List");
+            System.out.println("Press 4 to print length of your Linked List");
             int option = we.nextInt();
 
             if (option == 1) {
                 System.out.println("Please select one");
-                System.out.println("Press 4 for insertion at beginning");
-                System.out.println("Press 5 for insertion at end");
-                System.out.println("Press 6 for insertion at specific position");
+                System.out.println("Press 5 for insertion at beginning");
+                System.out.println("Press 6 for insertion at end");
+                System.out.println("Press 7 for insertion at specific position");
                 int opt = we.nextInt();
-                if (opt == 4) {
+                if (opt == 5) {
                     System.out.println("Enter value you want to insert");
                     int a = we.nextInt();
                     insertAtBeg(a, head);
                 }
-                else if (opt == 5) {
+                else if (opt == 6) {
                     System.out.println("Enter value you want to insert");
                     int a = we.nextInt();
                     insertAtEnd(a, head);
                 }
-                else if(opt==6){
+                else if(opt==7){
                     System.out.println("Enter the position");
                     int pos = we.nextInt();
                     System.out.println("Enter value you want to insert");
@@ -116,17 +126,17 @@ public class LinkedList2 {
 
             } else if (option == 2) {
                 System.out.println("Please select one");
-                System.out.println("Press 7 for deletion at beginning");
-                System.out.println("Press 8 for deletion at end");
-                System.out.println("Press 9 for deletion at specific position");
+                System.out.println("Press 8 for deletion at beginning");
+                System.out.println("Press 9 for deletion at end");
+                System.out.println("Press 10 for deletion at specific position");
                 int opt = we.nextInt();
-                if (opt == 7) {
+                if (opt == 8) {
                     deleteAtBeg();
                 }
-                else if (opt == 8) {
+                else if (opt == 9) {
                     deleteAtEnd(head);
                 }
-                else if(opt==9) {
+                else if(opt==10) {
                     System.out.println("Enter the position");
                     int pos = we.nextInt();
                     deleteAtSpecific(pos, head);
@@ -137,6 +147,9 @@ public class LinkedList2 {
             }
             else if(option==3) {
                 printList(head);
+            }
+                else if(option==4){
+               System.out.println("Current length of  your LL is "+printLength(head));
             }
             else{
                 System.out.println("PLEASE ENTER VALID NUMBERS");
